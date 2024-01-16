@@ -1,0 +1,18 @@
+image: node:16.20.2
+
+pages:
+  cache:
+    paths:
+      - node_modules/ # 缓存node_mudules将大大提高ci运行的速度
+
+  script:
+    - npm install
+    - npm run docs:build
+    # - mkdir -p public # 仅当 Linux 中尚不存在时才创建目录
+    # - rm -rf public/* # linux命令，递归无询问删除public目录下所有文件
+    # - mv .vuepress/dist/* public/ # 将.vuepress/dist目录下的所有文件都移动到public目录下
+  artifacts: # 工件缓存
+    paths:
+      #- public # 缓存整个public目录的文件
+  only:
+    - main # 所有操作只在main分支上进行
