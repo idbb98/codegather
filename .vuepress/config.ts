@@ -11,6 +11,7 @@ const tags = ["程序员", "编程", "计算机"];
 export default defineConfig({
   title: "KeepC笔记",
   description: "编程学习笔记",
+  base: "/codegather/",
   head: [
     // 站点图标
     ["link", { rel: "icon", href: "/favicon.ico" }],
